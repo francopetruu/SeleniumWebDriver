@@ -20,10 +20,11 @@ namespace UnitTestProject1.TestScript.WebElement
             try
             {
                 ObjectRepository.Driver.FindElement(By.XPath("//input[@name= 'uid']"));
+                ObjectRepository.Driver.FindElement(By.XPath("//input[@name= 'uid1']"));
             } 
             catch (NoSuchElementException e)
             {
-                Console.WriteLine(e.StackTrace);
+                Console.WriteLine(e);
             }
             
         }
