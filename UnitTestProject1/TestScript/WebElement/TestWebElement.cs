@@ -2,6 +2,7 @@
 using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,7 +21,9 @@ namespace UnitTestProject1.TestScript.WebElement
             try
             {
                 ObjectRepository.Driver.FindElement(By.XPath("//input[@name= 'uid']"));
-                ObjectRepository.Driver.FindElement(By.XPath("//input[@name= 'uid1']"));
+                ReadOnlyCollection<IWebElement> list = ObjectRepository.Driver.FindElements(By.XPath("//input"));
+                Console.WriteLine("Size: " + list.Count);
+                Console.WriteLine("Element zero: " + list.ElementAt(0));
             } 
             catch (NoSuchElementException e)
             {
