@@ -17,8 +17,7 @@ namespace UnitTestProject1.TestScript.HyperLink
         public void ClickLink()
         {
             NavigationHelper.NavigateToUrl(ObjectRepository.Config.GetWebsite());
-            IWebElement element = ObjectRepository.Driver.FindElement(By.LinkText("here"));
-            element.Click(); 
+            LinkHelper.ClickLink(By.LinkText("here")); 
         }
     }
 }
