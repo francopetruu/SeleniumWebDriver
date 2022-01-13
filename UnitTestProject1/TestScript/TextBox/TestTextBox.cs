@@ -17,10 +17,8 @@ namespace UnitTestProject1.TestScript.TextBox
         public void TextBox()
         {
             NavigationHelper.NavigateToUrl(ObjectRepository.Config.GetWebsite());
-            IWebElement userInput = ObjectRepository.Driver.FindElement(By.XPath("//input[@name= 'uid']"));
-            IWebElement passInput = ObjectRepository.Driver.FindElement(By.XPath("//input[@name= 'password']"));
-            userInput.SendKeys(ObjectRepository.Config.GetUserName());
-            passInput.SendKeys(ObjectRepository.Config.GetPassword());
+            TextBoxHelper.TypeOnTextBox(By.XPath("//input[@name= 'uid']"), ObjectRepository.Config.GetUserName());
+            TextBoxHelper.TypeOnTextBox(By.XPath("//input[@name= 'password']"), ObjectRepository.Config.GetPassword());
         }
     }
 }
