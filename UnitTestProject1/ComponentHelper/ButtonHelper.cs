@@ -15,5 +15,22 @@ namespace UnitTestProject1.ComponentHelper
             element = GenericHelper.GetElement(locator);
             element.Click();
         }
+        public static bool IsButtonEnabled(By locator)
+        {
+            element = GenericHelper.GetElement(locator);
+            return element.Enabled;
+        }
+        public static string GetButtonText(By locator)
+        {
+            element = GenericHelper.GetElement(locator);
+            if(element.GetAttribute("value") == null)
+            {
+                return String.Empty;
+            }
+            else
+            {
+                return element.GetAttribute("value");
+            }
+        }
     }
 }

@@ -19,6 +19,7 @@ namespace UnitTestProject1.TestScript.Button
             NavigationHelper.NavigateToUrl(ObjectRepository.Config.GetWebsite());
             TextBoxHelper.TypeOnTextBox(By.XPath("//input[@name= 'uid']"), ObjectRepository.Config.GetUserName());
             TextBoxHelper.TypeOnTextBox(By.XPath("//input[@name= 'password']"), ObjectRepository.Config.GetPassword());
+            Console.WriteLine(ButtonHelper.GetButtonText(By.XPath("//input[@name= 'btnLogin']")));
             ButtonHelper.ClickButton(By.XPath("//input[@name= 'btnLogin']"));
         }
     }
