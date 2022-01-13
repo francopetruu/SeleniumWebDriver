@@ -71,6 +71,7 @@
     <Compile Include="Settings\ObjectRepository.cs" />
     <Compile Include="TestScript\HyperLink\TestHyperLink.cs" />
     <Compile Include="TestScript\PageNavigation\TestPageNavigation.cs" />
+    <Compile Include="TestScript\TextBox\TestTextBox.cs" />
     <Compile Include="TestScript\WebElement\TestWebElement.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
