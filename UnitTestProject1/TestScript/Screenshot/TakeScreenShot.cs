@@ -22,8 +22,8 @@ namespace UnitTestProject1.TestScript.Screenshot
             TextBoxHelper.TypeOnTextBox(By.XPath("//input[@name= 'uid']"), ObjectRepository.Config.GetUserName());
             TextBoxHelper.TypeOnTextBox(By.XPath("//input[@name= 'password']"), ObjectRepository.Config.GetPassword());
             ButtonHelper.ClickButton(By.XPath("//input[@name= 'btnLogin']"));
-            ITakesScreenshot screenshot = ((ITakesScreenshot)ObjectRepository.Driver);
-            screenshot.GetScreenshot().SaveAsFile("screenshot.jpg", ScreenshotImageFormat.Jpeg);
+            GenericHelper.TakeScreenshot();
+            GenericHelper.TakeScreenshot("newScreenshot");
         }
     }
 }

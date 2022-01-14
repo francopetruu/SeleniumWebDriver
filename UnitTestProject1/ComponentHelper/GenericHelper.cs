@@ -44,5 +44,16 @@ namespace UnitTestProject1.ComponentHelper
                 throw new NoSuchElementException("Element not found: " + (By.XPath("//*[text()= '" + text + "']")).ToString());
             }
         }
+        public static void TakeScreenshot(string filename = "Screenshot")
+        {
+            ITakesScreenshot screenshot = ((ITakesScreenshot)ObjectRepository.Driver);
+            if (filename.Equals("Screenshot"))
+            {
+                string name = filename + DateTime.Now.ToString("dd-MM-yyyy-hh-mm") + ".jpeg";
+                screenshot.GetScreenshot().SaveAsFile(name, ScreenshotImageFormat.Jpeg);
+                return;
+            }
+            screenshot.GetScreenshot().SaveAsFile(filename + ".jpeg", ScreenshotImageFormat.Jpeg);
+        }
     }
 }
