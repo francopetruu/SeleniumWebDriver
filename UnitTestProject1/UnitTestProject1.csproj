@@ -60,6 +60,7 @@
     <Compile Include="BaseClass\BaseClass.cs" />
     <Compile Include="ComponentHelper\ButtonHelper.cs" />
     <Compile Include="ComponentHelper\CheckBoxHelper.cs" />
+    <Compile Include="ComponentHelper\ComboBoxHelper.cs" />
     <Compile Include="ComponentHelper\GenericHelper.cs" />
     <Compile Include="ComponentHelper\LinkHelper.cs" />
     <Compile Include="ComponentHelper\NavigationHelper.cs" />
@@ -75,6 +76,7 @@
     <Compile Include="Settings\ObjectRepository.cs" />
     <Compile Include="TestScript\Button\TestButton.cs" />
     <Compile Include="TestScript\CheckBox\TestCheckBox.cs" />
+    <Compile Include="TestScript\DropDown\TestDropDownList.cs" />
     <Compile Include="TestScript\HyperLink\TestHyperLink.cs" />
     <Compile Include="TestScript\PageNavigation\TestPageNavigation.cs" />
     <Compile Include="TestScript\RadioButton\TestRadioButton.cs" />
