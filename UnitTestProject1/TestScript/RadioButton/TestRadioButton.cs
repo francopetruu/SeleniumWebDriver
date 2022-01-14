@@ -21,6 +21,9 @@ namespace UnitTestProject1.TestScript.RadioButton
             TextBoxHelper.TypeOnTextBox(By.XPath("//input[@name= 'password']"), ObjectRepository.Config.GetPassword());
             ButtonHelper.ClickButton(By.XPath("//input[@name= 'btnLogin']"));
             LinkHelper.ClickLinkByText("New Customer");
+            Console.WriteLine("Radio button selected: " + RadioButtonHelper.IsRadioButtonSelected(By.XPath("//*[@value= 'm']")));
+            RadioButtonHelper.ClickRadioButton(By.XPath("//*[@value= 'f']"));
+            Console.WriteLine("Radio button selected: " + RadioButtonHelper.IsRadioButtonSelected(By.XPath("//*[@value= 'f']")));
         }
     }
 }
