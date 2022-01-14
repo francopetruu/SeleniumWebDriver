@@ -15,5 +15,10 @@ namespace UnitTestProject1.ComponentHelper
             element = GenericHelper.GetElement(locator);
             element.Click();
         }
+        public static void ClickLinkByText(string text)
+        {
+            element = GenericHelper.GetElementByText(text);
+            element.Click();
+        }
     }
 }

@@ -33,5 +33,16 @@ namespace UnitTestProject1.ComponentHelper
                 throw new NoSuchElementException("Element not found: " + locator.ToString());
             }
         }
+        public static IWebElement GetElementByText(string text)
+        {
+            if (IsElementPresent(By.XPath("//*[text()= '" + text + "']")))
+            {
+                return ObjectRepository.Driver.FindElement(By.XPath("//*[text()= '" + text + "']"));
+            }
+            else
+            {
+                throw new NoSuchElementException("Element not found: " + (By.XPath("//*[text()= '" + text + "']")).ToString());
+            }
+        }
     }
 }
