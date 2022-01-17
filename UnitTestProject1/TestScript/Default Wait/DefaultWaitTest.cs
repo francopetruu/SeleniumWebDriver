@@ -24,11 +24,14 @@ namespace UnitTestProject1.TestScript.Default_Wait
             Console.WriteLine(ButtonHelper.IsButtonEnabled(By.XPath("//input[@name= 'btnLogin']")));
             ButtonHelper.ClickButton(By.XPath("//input[@name= 'btnLogin']"));
             ObjectRepository.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(1);
-            DefaultWait<IWebElement> wait = new DefaultWait<IWebElement>(ObjectRepository.Driver.FindElement(By.XPath("//a[text()= 'Manager']")));
-            wait.PollingInterval = TimeSpan.FromMilliseconds(200);
-            wait.Timeout = TimeSpan.FromSeconds(50);
-            wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(ElementNotVisibleException));
-            Console.WriteLine(wait.Until(elementIsVisible()));
+            GenericHelper.WaitForWebElement(By.XPath("//a[text()= 'Manager']"), TimeSpan.FromSeconds(50));
+            IWebElement element = GenericHelper.WaitForWebElementInPage(By.XPath("//a[text()= 'Manager']"), TimeSpan.FromSeconds(50));
+            
+            //DefaultWait<IWebElement> wait = new DefaultWait<IWebElement>(ObjectRepository.Driver.FindElement(By.XPath("//a[text()= 'Manager']")));
+            //wait.PollingInterval = TimeSpan.FromMilliseconds(200);
+            //wait.Timeout = TimeSpan.FromSeconds(50);
+            //wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(ElementNotVisibleException));
+            //Console.WriteLine(wait.Until(elementIsVisible()));
         }
         private Func<IWebElement, string> elementIsVisible()
         {

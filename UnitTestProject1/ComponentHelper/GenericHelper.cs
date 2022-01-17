@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -54,6 +55,54 @@ namespace UnitTestProject1.ComponentHelper
                 return;
             }
             screenshot.GetScreenshot().SaveAsFile(filename + ".jpeg", ScreenshotImageFormat.Jpeg);
+        }
+        public static bool WaitForWebElement(By locator, TimeSpan timeout)
+        {
+            ObjectRepository.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(1);
+            WebDriverWait wait = new WebDriverWait(ObjectRepository.Driver, timeout);
+            wait.PollingInterval = TimeSpan.FromMilliseconds(500);
+            wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(ElementNotVisibleException));
+            bool flag = wait.Until(WaitForWebElementFunction(locator));
+            ObjectRepository.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(ObjectRepository.Config.GetElementLoadTimeout());
+            return flag; 
+        }
+        public static IWebElement WaitForWebElementInPage(By locator, TimeSpan timeout)
+        {
+            ObjectRepository.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(1);
+            WebDriverWait wait = new WebDriverWait(ObjectRepository.Driver, timeout);
+            wait.PollingInterval = TimeSpan.FromMilliseconds(500);
+            wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(ElementNotVisibleException));
+            IWebElement flag = wait.Until(WaitForWebElementInPageFunction(locator));
+            ObjectRepository.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(ObjectRepository.Config.GetElementLoadTimeout());
+            return flag;
+        }
+        private static Func<IWebDriver, bool> WaitForWebElementFunction(By locator)
+        {
+            return (x =>
+            {
+                if(x.FindElements(locator).Count == 1)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            });
+        }
+        private static Func<IWebDriver, IWebElement> WaitForWebElementInPageFunction(By locator)
+        {
+            return (x =>
+            {
+                if (x.FindElements(locator).Count == 1)
+                {
+                    return x.FindElement(locator);
+                }
+                else
+                {
+                    return null;
+                }
+            });
         }
     }
 }
