@@ -77,6 +77,7 @@
     <Compile Include="TestScript\Button\TestButton.cs" />
     <Compile Include="TestScript\CheckBox\TestCheckBox.cs" />
     <Compile Include="TestScript\DropDown\TestDropDownList.cs" />
+    <Compile Include="TestScript\FindAllElements\FindAllElementsTest.cs" />
     <Compile Include="TestScript\HyperLink\TestHyperLink.cs" />
     <Compile Include="TestScript\PageNavigation\TestPageNavigation.cs" />
     <Compile Include="TestScript\RadioButton\TestRadioButton.cs" />
