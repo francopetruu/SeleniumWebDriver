@@ -22,7 +22,8 @@ namespace UnitTestProject1.TestScript.WebDriverWaitsTest
             WebDriverWait dynamicWait = new WebDriverWait(ObjectRepository.Driver, TimeSpan.FromSeconds(50));
             dynamicWait.PollingInterval = TimeSpan.FromSeconds(250);
             dynamicWait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(ElementNotVisibleException));
-            dynamicWait.Until(waitForSearchBox());
+            //dynamicWait.Until(waitForSearchBox());
+            Console.Write(dynamicWait.Until(waitForTitle()));
         }
         private Func<IWebDriver, bool> waitForSearchBox()
         {
@@ -30,6 +31,20 @@ namespace UnitTestProject1.TestScript.WebDriverWaitsTest
             {
                 Console.WriteLine("Waiting for searchbox");
                 return x.FindElements(By.XPath("//input[@name= 'uid']")).Count == 1;
+            });
+        }
+        private Func<IWebDriver, string> waitForTitle()
+        {
+            return ((x) =>
+            {
+                if(x.Title.Contains("Guru99 Bank"))
+                {
+                    return x.Title;
+                }
+                else
+                {
+                    return null;
+                }
             });
         }
     }
