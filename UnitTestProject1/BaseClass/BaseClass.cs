@@ -77,6 +77,9 @@ namespace UnitTestProject1.BaseClass
             ObjectRepository.Driver.Manage()
                 .Timeouts()
                 .PageLoad = TimeSpan.FromSeconds(ObjectRepository.Config.GetPageLoadTimeout());
+            ObjectRepository.Driver.Manage()
+                .Timeouts()
+                .ImplicitWait = TimeSpan.FromSeconds(ObjectRepository.Config.GetElementLoadTimeout());
         }
         [AssemblyCleanup]
         public static void TearDown()
