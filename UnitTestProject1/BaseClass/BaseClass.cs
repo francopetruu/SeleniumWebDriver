@@ -74,6 +74,9 @@ namespace UnitTestProject1.BaseClass
                 default:
                     throw new NoSuitableDriverFound("Driver not found: " + ObjectRepository.Config.GetBrowser().ToString());
             }
+            ObjectRepository.Driver.Manage()
+                .Timeouts()
+                .PageLoad = TimeSpan.FromSeconds(ObjectRepository.Config.GetPageLoadTimeout());
         }
         [AssemblyCleanup]
         public static void TearDown()

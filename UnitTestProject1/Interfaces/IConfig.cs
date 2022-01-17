@@ -13,5 +13,6 @@ namespace UnitTestProject1.Interfaces
         string GetUserName();
         string GetPassword();
         string GetWebsite();
+        int GetPageLoadTimeout();
     }
 }

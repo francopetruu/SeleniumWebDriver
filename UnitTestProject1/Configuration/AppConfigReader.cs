@@ -31,5 +31,14 @@ namespace UnitTestProject1.Configuration
         {
             return ConfigurationManager.AppSettings.Get(AppConfigKeys.Website);
         }
+        public int GetPageLoadTimeout()
+        {
+            string timeout = ConfigurationManager.AppSettings.Get(AppConfigKeys.PageLoadTimeout);
+            if(timeout == null)
+            {
+                return 30;
+            }
+            return Convert.ToInt32(timeout);
+        }
     }
 }
