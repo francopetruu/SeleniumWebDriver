@@ -19,8 +19,7 @@ namespace UnitTestProject1.TestScript.MultipleBrowser
         {
             NavigationHelper.NavigateToUrl("https://www.w3schools.com/js/js_popup.asp");
             ButtonHelper.ClickButton(By.XPath("(//a[text()= 'Try it Yourself »'])[1]"));
-            ReadOnlyCollection<string> windows = ObjectRepository.Driver.WindowHandles;
-            ObjectRepository.Driver.SwitchTo().Window(windows[1]);
+            BrowserHelper.SwitchToWindow(1);
             ButtonHelper.ClickButton(By.XPath("//button[@id= 'runbtn']"));
         }
     }
