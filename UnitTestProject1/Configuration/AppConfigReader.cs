@@ -40,5 +40,14 @@ namespace UnitTestProject1.Configuration
             }
             return Convert.ToInt32(timeout);
         }
+        public int GetElementLoadTimeout()
+        {
+            string timeout = ConfigurationManager.AppSettings.Get(AppConfigKeys.ElementLoadTimeout);
+            if (timeout == null)
+            {
+                return 30;
+            }
+            return Convert.ToInt32(timeout);
+        }
     }
 }

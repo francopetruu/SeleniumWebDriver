@@ -13,5 +13,6 @@ namespace UnitTestProject1.Settings
         public const string Password = "Password";
         public const string Website = "Website";
         public const string PageLoadTimeout = "PageLoadTimeout";
+        public const string ElementLoadTimeout = "ElementLoadTimeout";
     }
 }

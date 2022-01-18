@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,8 +16,8 @@ namespace UnitTestProject1.TestScript.WebDriverWaitsTest
         [TestMethod]
         public void TestImplicitWaits()
         {
-            ObjectRepository.Driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(20);
             NavigationHelper.NavigateToUrl(ObjectRepository.Config.GetWebsite());
+            TextBoxHelper.TypeOnTextBox(By.XPath("//input[@name= 'uid']"), ObjectRepository.Config.GetUserName());
         }
     }
 }

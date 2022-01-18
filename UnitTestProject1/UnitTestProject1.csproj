@@ -76,6 +76,7 @@
     <Compile Include="Settings\ObjectRepository.cs" />
     <Compile Include="TestScript\Button\TestButton.cs" />
     <Compile Include="TestScript\CheckBox\TestCheckBox.cs" />
+    <Compile Include="TestScript\Default Wait\DefaultWaitTest.cs" />
     <Compile Include="TestScript\DropDown\TestDropDownList.cs" />
     <Compile Include="TestScript\FindAllElements\FindAllElementsTest.cs" />
     <Compile Include="TestScript\HyperLink\TestHyperLink.cs" />
@@ -83,6 +84,7 @@
     <Compile Include="TestScript\RadioButton\TestRadioButton.cs" />
     <Compile Include="TestScript\Screenshot\TakeScreenShot.cs" />
     <Compile Include="TestScript\TextBox\TestTextBox.cs" />
+    <Compile Include="TestScript\WebDriverWaitsTest\ExplicitWaitTest.cs" />
     <Compile Include="TestScript\WebDriverWaitsTest\ImplicitWaitTest.cs" />
     <Compile Include="TestScript\WebElement\TestWebElement.cs" />
     <Compile Include="UnitTest1.cs" />

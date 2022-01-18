@@ -14,6 +14,16 @@ namespace UnitTestProject1.Configuration
             throw new NotImplementedException();
         }
 
+        public int GetElementLoadTimeout()
+        {
+            throw new NotImplementedException();
+        }
+
+        public int GetPageLoadTimeout()
+        {
+            throw new NotImplementedException();
+        }
+
         public string GetPassword()
         {
             throw new NotImplementedException();
