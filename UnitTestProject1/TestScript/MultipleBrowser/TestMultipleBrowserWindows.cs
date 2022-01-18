@@ -22,5 +22,15 @@ namespace UnitTestProject1.TestScript.MultipleBrowser
             BrowserHelper.SwitchToWindow(1);
             ButtonHelper.ClickButton(By.XPath("//button[@id= 'runbtn']"));
         }
+        [TestMethod]
+        public void TestFrames()
+        {
+            NavigationHelper.NavigateToUrl("https://www.w3schools.com/js/js_popup.asp");
+            ButtonHelper.ClickButton(By.XPath("(//a[text()= 'Try it Yourself »'])[1]"));
+            BrowserHelper.SwitchToWindow(1);
+            IFrameHelper.SwitchToFrame(By.Id("iframeResult"));
+            //ButtonHelper.ClickButton(By.XPath("//button[text()= 'Try it']"));
+            IFrameHelper.SwitchToParentFrame();
+        }
     }
 }
