@@ -37,7 +37,7 @@ namespace UnitTestProject1.ComponentHelper
             ObjectRepository.Driver.SwitchTo().Window(windows[index]);
             BrowserMaximize();
         }
-        public static void SwitchToParent()
+        public static void SwitchToParentWindow()
         {
             var windowsIds = ObjectRepository.Driver.WindowHandles;
             for(int i= windowsIds.Count; i > 0; i--)
