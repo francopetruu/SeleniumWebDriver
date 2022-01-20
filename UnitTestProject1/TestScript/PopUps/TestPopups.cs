@@ -25,5 +25,22 @@ namespace UnitTestProject1.TestScript.PopUps
             JavaScriptPopupHelper.AcceptAlert();
             IFrameHelper.SwitchToParentFrame();
         }
+        [TestMethod]
+        public void ConfirmPopupTest()
+        {
+            NavigationHelper.NavigateToUrl("https://www.w3schools.com/js/tryit.asp?filename=tryjs_confirm");
+            IFrameHelper.SwitchToFrame(By.Id("iframeResult"));
+            ButtonHelper.ClickButton(By.XPath("//button[text()= 'Try it']"));
+            JavaScriptPopupHelper.CancelAlert();
+        }
+        [TestMethod]
+        public void PromptPopupTest()
+        {
+            NavigationHelper.NavigateToUrl("https://www.w3schools.com/js/tryit.asp?filename=tryjs_prompt");
+            IFrameHelper.SwitchToFrame(By.Id("iframeResult"));
+            ButtonHelper.ClickButton(By.XPath("//button[text()= 'Try it']"));
+            JavaScriptPopupHelper.SendKeysToAlert("This is my name");
+            JavaScriptPopupHelper.AcceptAlert();
+        }
     }
 }

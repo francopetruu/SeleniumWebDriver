@@ -66,6 +66,7 @@
     <Compile Include="ComponentHelper\IFrameHelper.cs" />
     <Compile Include="ComponentHelper\JavaScriptPopupHelper.cs" />
     <Compile Include="ComponentHelper\LinkHelper.cs" />
+    <Compile Include="ComponentHelper\MouseActionsHelper.cs" />
     <Compile Include="ComponentHelper\NavigationHelper.cs" />
     <Compile Include="ComponentHelper\RadioButtonHelper.cs" />
     <Compile Include="ComponentHelper\TextBoxHelper.cs" />
@@ -84,6 +85,7 @@
     <Compile Include="TestScript\DropDown\TestDropDownList.cs" />
     <Compile Include="TestScript\FindAllElements\FindAllElementsTest.cs" />
     <Compile Include="TestScript\HyperLink\TestHyperLink.cs" />
+    <Compile Include="TestScript\MouseActions\TestMouseActions.cs" />
     <Compile Include="TestScript\MultipleBrowser\TestMultipleBrowserWindows.cs" />
     <Compile Include="TestScript\PageNavigation\TestPageNavigation.cs" />
     <Compile Include="TestScript\PopUps\TestPopups.cs" />

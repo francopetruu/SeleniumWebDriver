@@ -44,5 +44,27 @@ namespace UnitTestProject1.ComponentHelper
                 return;
             }
         }
+        public static void CancelAlert()
+        {
+            if (IsAlertPresent())
+            {
+                ObjectRepository.Driver.SwitchTo().Alert().Dismiss();
+            }
+            else
+            {
+                return;
+            }
+        }
+        public static void SendKeysToAlert(string text)
+        {
+            if (IsAlertPresent())
+            {
+                ObjectRepository.Driver.SwitchTo().Alert().SendKeys(text);
+            }
+            else
+            {
+                return;
+            }
+        }
     }
 }
