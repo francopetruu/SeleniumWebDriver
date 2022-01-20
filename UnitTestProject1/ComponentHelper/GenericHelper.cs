@@ -104,5 +104,15 @@ namespace UnitTestProject1.ComponentHelper
                 }
             });
         }
+        public static WebDriverWait GetWebDriverWait(TimeSpan timeout)
+        {
+            ObjectRepository.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(1);
+            WebDriverWait wait = new WebDriverWait(ObjectRepository.Driver, timeout)
+            {
+                PollingInterval = TimeSpan.FromMilliseconds(500),
+            };
+            wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(ElementNotVisibleException));
+            return wait;
+        }
     }
 }
