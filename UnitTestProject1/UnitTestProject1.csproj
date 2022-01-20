@@ -58,11 +58,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseClass\BaseClass.cs" />
+    <Compile Include="ComponentHelper\AutoSuggestHelper.cs" />
+    <Compile Include="ComponentHelper\BrowserHelper.cs" />
     <Compile Include="ComponentHelper\ButtonHelper.cs" />
     <Compile Include="ComponentHelper\CheckBoxHelper.cs" />
     <Compile Include="ComponentHelper\ComboBoxHelper.cs" />
     <Compile Include="ComponentHelper\GenericHelper.cs" />
+    <Compile Include="ComponentHelper\IFrameHelper.cs" />
+    <Compile Include="ComponentHelper\JavaScriptExecutorHelper.cs" />
+    <Compile Include="ComponentHelper\JavaScriptPopupHelper.cs" />
+    <Compile Include="ComponentHelper\KeyboardActionsHelper.cs" />
     <Compile Include="ComponentHelper\LinkHelper.cs" />
+    <Compile Include="ComponentHelper\MouseActionsHelper.cs" />
     <Compile Include="ComponentHelper\NavigationHelper.cs" />
     <Compile Include="ComponentHelper\RadioButtonHelper.cs" />
     <Compile Include="ComponentHelper\TextBoxHelper.cs" />
@@ -74,13 +81,20 @@
     <Compile Include="Interfaces\IConfig.cs" />
     <Compile Include="Settings\AppConfigKeys.cs" />
     <Compile Include="Settings\ObjectRepository.cs" />
+    <Compile Include="TestScript\AutoSuggest\TestAutoSuggest.cs" />
+    <Compile Include="TestScript\BrowserActions\TestBrowserActions.cs" />
     <Compile Include="TestScript\Button\TestButton.cs" />
     <Compile Include="TestScript\CheckBox\TestCheckBox.cs" />
     <Compile Include="TestScript\Default Wait\DefaultWaitTest.cs" />
     <Compile Include="TestScript\DropDown\TestDropDownList.cs" />
     <Compile Include="TestScript\FindAllElements\FindAllElementsTest.cs" />
     <Compile Include="TestScript\HyperLink\TestHyperLink.cs" />
+    <Compile Include="TestScript\JavaScript\TestJavaScript.cs" />
+    <Compile Include="TestScript\KeyBoardsActions\TestKeyboardActions.cs" />
+    <Compile Include="TestScript\MouseActions\TestMouseActions.cs" />
+    <Compile Include="TestScript\MultipleBrowser\TestMultipleBrowserWindows.cs" />
     <Compile Include="TestScript\PageNavigation\TestPageNavigation.cs" />
+    <Compile Include="TestScript\PopUps\TestPopups.cs" />
     <Compile Include="TestScript\RadioButton\TestRadioButton.cs" />
     <Compile Include="TestScript\Screenshot\TakeScreenShot.cs" />
     <Compile Include="TestScript\TextBox\TestTextBox.cs" />
