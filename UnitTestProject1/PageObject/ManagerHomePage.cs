@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using SeleniumExtras.PageObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,30 +9,23 @@ using UnitTestProject1.Settings;
 
 namespace UnitTestProject1.PageObject
 {
-    public class ManagerHomePage : BasePage
+    public class ManagerHomePage
     {
         #region WebElements
-        private By managerIdBanner = By.XPath("//td[contains(text(), 'Manger Id')]");
-        private By welcomeBanner = By.XPath("//marquee[contains(text(), 'Welcome')]");
-        
+        [FindsBy(How = How.XPath, Using = "//td[contains(text(), 'Manger Id')]")]
+        private IWebElement managerIdBanner;
+        [FindsBy(How = How.XPath, Using = "//marquee[contains(text(), 'Welcome')]")]
+        private IWebElement welcomeBanner;
         #endregion
 
         #region Actions
-        public void SetUserName(string user)
+        public string GetBannerWelcomeMessage()
         {
-            ObjectRepository.Driver.FindElement(userIdTextBox).SendKeys(user);
+            return welcomeBanner.Text;
         }
-        public void SetPassword(string pass)
+        public string GetManagerId()
         {
-            ObjectRepository.Driver.FindElement(passwordTextBox).SendKeys(pass);
-        }
-        public void ClickOnLoginButton()
-        {
-            ObjectRepository.Driver.FindElement(loginButton).Click();
-        }
-        public void ClickOnResetButton()
-        {
-            ObjectRepository.Driver.FindElement(resetButton).Click();
+            return managerIdBanner.Text;
         }
         #endregion
 

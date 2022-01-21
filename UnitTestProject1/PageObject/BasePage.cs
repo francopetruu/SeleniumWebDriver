@@ -8,7 +8,7 @@ using UnitTestProject1.Settings;
 
 namespace UnitTestProject1.PageObject
 {
-    public abstract class BasePage
+    public class BasePage
     {
         #region WebElements
         private By linkElementByText = By.XPath("//a[contains(text(), 'REPLACE')]");
