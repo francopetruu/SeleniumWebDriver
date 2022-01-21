@@ -11,6 +11,11 @@ namespace UnitTestProject1.PageObject
 {
     public class LoginPage
     {
+        public LoginPage()
+        {
+            PageFactory.InitElements(ObjectRepository.Driver, this);
+        }
+
         #region WebElements
         [FindsBy(How = How.Name, Using = "uid")]
         private IWebElement userIdTextBox;
