@@ -85,6 +85,7 @@
     <Compile Include="PageObject\BasePage.cs" />
     <Compile Include="PageObject\LoginPage.cs" />
     <Compile Include="PageObject\ManagerHomePage.cs" />
+    <Compile Include="PageObject\SidebarPage.cs" />
     <Compile Include="Settings\AppConfigKeys.cs" />
     <Compile Include="Settings\ObjectRepository.cs" />
     <Compile Include="TestScript\AutoSuggest\TestAutoSuggest.cs" />
