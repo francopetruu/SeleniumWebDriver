@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using SeleniumExtras.PageObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,36 +12,41 @@ namespace UnitTestProject1.PageObject
     public class LoginPage
     {
         #region WebElements
-        private By userIdTextBox = By.Name("uid");
-        private By passwordTextBox = By.Name("password");
-        private By loginButton = By.Name("btnLogin");
-        private By resetButton = By.Name("btnReset");
-        private By hereLink = By.XPath("//a[text()= 'here']");
+        [FindsBy(How = How.Name, Using = "uid")]
+        private IWebElement userIdTextBox;
+        [FindsBy(How = How.Name, Using = "password")]
+        private IWebElement passwordTextBox;
+        [FindsBy(How = How.Name, Using = "btnLogin")]
+        private IWebElement loginButton;
+        [FindsBy(How = How.Name, Using = "btnReset")]
+        private IWebElement resetButton;
+        [FindsBy(How = How.XPath, Using = "//a[text()= 'here']")]
+        private IWebElement hereLink;
         #endregion
 
         #region Actions
         public void SetUserName(string user)
         {
-            ObjectRepository.Driver.FindElement(userIdTextBox).SendKeys(user);
+            userIdTextBox.SendKeys(user);
         }
         public void SetPassword(string pass)
         {
-            ObjectRepository.Driver.FindElement(passwordTextBox).SendKeys(pass);
+            passwordTextBox.SendKeys(pass);
         }
         public void ClickOnLoginButton()
         {
-            ObjectRepository.Driver.FindElement(loginButton).Click();
+            loginButton.Click();
         }
         public void ClickOnResetButton()
         {
-            ObjectRepository.Driver.FindElement(resetButton).Click();
+            resetButton.Click();
         }
         #endregion
 
         #region Navigation
         public void NavigateToGenerateAccessPage()
         {
-            ObjectRepository.Driver.FindElement(hereLink).Click();
+            hereLink.Click();
         } 
         #endregion
     }

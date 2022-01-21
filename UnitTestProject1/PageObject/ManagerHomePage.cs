@@ -11,6 +11,11 @@ namespace UnitTestProject1.PageObject
 {
     public class ManagerHomePage
     {
+        public ManagerHomePage()
+        {
+            PageFactory.InitElements(ObjectRepository.Driver, this);
+        }
+
         #region WebElements
         [FindsBy(How = How.XPath, Using = "//td[contains(text(), 'Manger Id')]")]
         private IWebElement managerIdBanner;
@@ -30,10 +35,6 @@ namespace UnitTestProject1.PageObject
         #endregion
 
         #region Navigation
-        public void NavigateToGenerateAccessPage()
-        {
-            ObjectRepository.Driver.FindElement(hereLink).Click();
-        }
         #endregion
     }
 }
