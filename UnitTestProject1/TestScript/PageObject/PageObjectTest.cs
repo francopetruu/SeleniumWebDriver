@@ -19,9 +19,11 @@ namespace UnitTestProject1.TestScript.PageObject
         {
             NavigationHelper.NavigateToUrl(ObjectRepository.Config.GetWebsite());
             LoginPage login = new LoginPage(ObjectRepository.Driver);
+            ManagerHomePage homePage = new ManagerHomePage(ObjectRepository.Driver);
             login.SetUserName(ObjectRepository.Config.GetUserName(), "UserID");
             login.SetPassword(ObjectRepository.Config.GetPassword(), "Password");
             login.ClickOnLoginButton("LOGIN");
+            Console.WriteLine(homePage.GetManagerId());
             Thread.Sleep(10000);
         }
     }

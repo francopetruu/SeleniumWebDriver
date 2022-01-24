@@ -18,20 +18,18 @@ namespace UnitTestProject1.PageObject
         }
 
         #region WebElements
-        [FindsBy(How = How.XPath, Using = "//td[contains(text(), 'Manger Id')]")]
-        private IWebElement managerIdBanner;
-        [FindsBy(How = How.XPath, Using = "//marquee[contains(text(), 'Welcome')]")]
-        private IWebElement welcomeBanner;
+        private By managerIdBanner = By.XPath("//td[contains(text(), 'Manger Id')]");
+        private By welcomeBanner = By.XPath("//marquee[contains(text(), 'Welcome')]");
         #endregion
 
         #region Actions
         public string GetBannerWelcomeMessage()
         {
-            return welcomeBanner.Text;
+            return driver.FindElement(welcomeBanner).Text;
         }
         public string GetManagerId()
         {
-            return managerIdBanner.Text;
+            return driver.FindElement(managerIdBanner).Text;
         }
         #endregion
 
