@@ -12,47 +12,42 @@ namespace UnitTestProject1.PageObject
     public class LoginPage : BasePage
     {
         private IWebDriver driver;
-        public LoginPage(IWebDriver driver) : base(driver)
+        public LoginPage(IWebDriver _driver) : base(_driver)
         {
-            this.driver = driver;
+            this.driver = _driver;
         }
 
         #region WebElements
-        [FindsBy(How = How.Name, Using = "uid")]
-        private IWebElement userIdTextBox;
-        [FindsBy(How = How.Name, Using = "password")]
-        private IWebElement passwordTextBox;
-        [FindsBy(How = How.Name, Using = "btnLogin")]
-        private IWebElement loginButton;
-        [FindsBy(How = How.Name, Using = "btnReset")]
-        private IWebElement resetButton;
-        [FindsBy(How = How.XPath, Using = "//a[text()= 'here']")]
-        private IWebElement hereLink;
+        private By userIdTextBox = By.Name("uid");
+        private By passwordTextBox = By.Name("password");
+        private By loginButton = By.Name("btnLogin");
+        private By resetButton = By.Name("btnReset");
+        private By hereLink = By.XPath("//a[text()= 'here']");
         #endregion
 
         #region Actions
-        public void SetUserName(string user)
+        public void SetUserName(string user, string label)
         {
-            userIdTextBox.SendKeys(user);
+            GetInputElementByLabel(label).SendKeys(user);
         }
-        public void SetPassword(string pass)
+        public void SetPassword(string pass, string label)
         {
-            passwordTextBox.SendKeys(pass);
+            GetInputElementByLabel(label).SendKeys(pass);
         }
-        public void ClickOnLoginButton()
+        public void ClickOnLoginButton(string buttonLabel)
         {
-            loginButton.Click();
+            GetButtonElementBylabel(buttonLabel).Click();
         }
-        public void ClickOnResetButton()
+        public void ClickOnResetButton(string buttonLabel)
         {
-            resetButton.Click();
+            GetButtonElementBylabel(buttonLabel).Click();
         }
         #endregion
 
         #region Navigation
         public void NavigateToGenerateAccessPage()
         {
-            hereLink.Click();
+            driver.FindElement(hereLink).Click();
         } 
         #endregion
     }

@@ -12,9 +12,9 @@ namespace UnitTestProject1.PageObject
     public class BasePage
     {
         private IWebDriver driver;
-        public BasePage(IWebDriver driver)
+        public BasePage(IWebDriver _driver)
         {
-            PageFactory.InitElements(driver, this);
+            this.driver = _driver;
         }
         #region WebElements
         private By linkElementByText = By.XPath("//a[contains(text(), 'REPLACE')]");
@@ -26,22 +26,22 @@ namespace UnitTestProject1.PageObject
         #region Actions
         protected IWebElement GetLinkElementByText(string text)
         {
-            var locator = linkElementByText.ToString().Replace("REPLACE", text);
+            var locator = linkElementByText.ToString().Substring(10).Replace("REPLACE", text);
             return driver.FindElement(By.XPath(locator));
         }
         protected IWebElement GetInputElementByLabel(string label)
         {
-            var locator = inputElementByLabel.ToString().Replace("REPLACE", label);
+            var locator = inputElementByLabel.ToString().Substring(10).Replace("REPLACE", label);
             return driver.FindElement(By.XPath(locator));
         }
         protected IWebElement GetTextAreaElementByLabel(string label)
         {
-            var locator = textAreaElementByLabel.ToString().Replace("REPLACE", label);
+            var locator = textAreaElementByLabel.ToString().Substring(10).Replace("REPLACE", label);
             return driver.FindElement(By.XPath(locator));
         }
         protected IWebElement GetButtonElementBylabel(string label)
         {
-            var locator = buttonElementByLabel.ToString().Replace("REPLACE", label);
+            var locator = buttonElementByLabel.ToString().Substring(10).Replace("REPLACE", label);
             return driver.FindElement(By.XPath(locator));
         }
         #endregion

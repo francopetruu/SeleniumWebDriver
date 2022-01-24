@@ -12,9 +12,9 @@ namespace UnitTestProject1.PageObject
     public class SidebarPage : BasePage
     {
         private IWebDriver driver;
-        public SidebarPage(IWebDriver driver) : base(driver)
+        public SidebarPage(IWebDriver _driver) : base(_driver)
         {
-            this.driver = driver;
+            this.driver = _driver;
         }
 
         #region WebElements

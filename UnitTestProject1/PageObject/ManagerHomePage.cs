@@ -12,9 +12,9 @@ namespace UnitTestProject1.PageObject
     public class ManagerHomePage : BasePage
     {
         private IWebDriver driver;
-        public ManagerHomePage(IWebDriver driver) : base(driver)
+        public ManagerHomePage(IWebDriver _driver) : base(_driver)
         {
-            this.driver = driver;
+            this.driver = _driver;
         }
 
         #region WebElements
