@@ -27,22 +27,22 @@ namespace UnitTestProject1.PageObject
         protected IWebElement GetLinkElementByText(string text)
         {
             var locator = linkElementByText.ToString().Replace("REPLACE", text);
-            return ObjectRepository.Driver.FindElement(By.XPath(locator));
+            return driver.FindElement(By.XPath(locator));
         }
         protected IWebElement GetInputElementByLabel(string label)
         {
             var locator = inputElementByLabel.ToString().Replace("REPLACE", label);
-            return ObjectRepository.Driver.FindElement(By.XPath(locator));
+            return driver.FindElement(By.XPath(locator));
         }
         protected IWebElement GetTextAreaElementByLabel(string label)
         {
             var locator = textAreaElementByLabel.ToString().Replace("REPLACE", label);
-            return ObjectRepository.Driver.FindElement(By.XPath(locator));
+            return driver.FindElement(By.XPath(locator));
         }
         protected IWebElement GetButtonElementBylabel(string label)
         {
             var locator = buttonElementByLabel.ToString().Replace("REPLACE", label);
-            return ObjectRepository.Driver.FindElement(By.XPath(locator));
+            return driver.FindElement(By.XPath(locator));
         }
         #endregion
     }

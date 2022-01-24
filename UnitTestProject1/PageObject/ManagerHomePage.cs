@@ -9,10 +9,12 @@ using UnitTestProject1.Settings;
 
 namespace UnitTestProject1.PageObject
 {
-    public class ManagerHomePage
+    public class ManagerHomePage : BasePage
     {
-        public ManagerHomePage()
+        private IWebDriver driver;
+        public ManagerHomePage(IWebDriver driver) : base(driver)
         {
+            this.driver = driver;
             PageFactory.InitElements(ObjectRepository.Driver, this);
         }
 

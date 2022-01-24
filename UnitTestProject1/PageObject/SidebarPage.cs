@@ -9,10 +9,12 @@ using UnitTestProject1.Settings;
 
 namespace UnitTestProject1.PageObject
 {
-    public class SidebarPage
+    public class SidebarPage : BasePage
     {
-        public SidebarPage()
+        private IWebDriver driver;
+        public SidebarPage(IWebDriver driver) : base(driver)
         {
+            this.driver = driver;
             PageFactory.InitElements(ObjectRepository.Driver, this);
         }
 
