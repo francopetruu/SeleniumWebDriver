@@ -15,7 +15,6 @@ namespace UnitTestProject1.PageObject
         public LoginPage(IWebDriver driver) : base(driver)
         {
             this.driver = driver;
-            PageFactory.InitElements(ObjectRepository.Driver, this);
         }
 
         #region WebElements
