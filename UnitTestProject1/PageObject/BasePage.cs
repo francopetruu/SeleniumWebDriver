@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using SeleniumExtras.PageObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,11 @@ namespace UnitTestProject1.PageObject
 {
     public class BasePage
     {
+        private IWebDriver driver;
+        public BasePage(IWebDriver driver)
+        {
+            PageFactory.InitElements(driver, this);
+        }
         #region WebElements
         private By linkElementByText = By.XPath("//a[contains(text(), 'REPLACE')]");
         private By inputElementByLabel = By.XPath("//td[text()= 'REPLACE']/following-sibling::td/input");
@@ -18,22 +24,22 @@ namespace UnitTestProject1.PageObject
         #endregion
 
         #region Actions
-        public IWebElement GetLinkElementByText(string text)
+        protected IWebElement GetLinkElementByText(string text)
         {
             var locator = linkElementByText.ToString().Replace("REPLACE", text);
             return ObjectRepository.Driver.FindElement(By.XPath(locator));
         }
-        public IWebElement GetInputElementByLabel(string label)
+        protected IWebElement GetInputElementByLabel(string label)
         {
             var locator = inputElementByLabel.ToString().Replace("REPLACE", label);
             return ObjectRepository.Driver.FindElement(By.XPath(locator));
         }
-        public IWebElement GetTextAreaElementByLabel(string label)
+        protected IWebElement GetTextAreaElementByLabel(string label)
         {
             var locator = textAreaElementByLabel.ToString().Replace("REPLACE", label);
             return ObjectRepository.Driver.FindElement(By.XPath(locator));
         }
-        public IWebElement GetButtonElementBylabel(string label)
+        protected IWebElement GetButtonElementBylabel(string label)
         {
             var locator = buttonElementByLabel.ToString().Replace("REPLACE", label);
             return ObjectRepository.Driver.FindElement(By.XPath(locator));
