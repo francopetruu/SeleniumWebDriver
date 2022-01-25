@@ -44,6 +44,14 @@ namespace UnitTestProject1.PageObject
             var locator = buttonElementByLabel.ToString().Substring(10).Replace("REPLACE", label);
             return driver.FindElement(By.XPath(locator));
         }
+        protected void ClickOnButtonByLabel(string label)
+        {
+            GetButtonElementBylabel(label).Click();
+        }
+        protected void ClickOnLinkByText(string text)
+        {
+            GetLinkElementByText(text).Click();
+        }
         #endregion
     }
 }
