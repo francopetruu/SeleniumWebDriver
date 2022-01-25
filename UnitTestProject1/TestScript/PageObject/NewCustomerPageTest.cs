@@ -14,7 +14,7 @@ namespace UnitTestProject1.TestScript.PageObject
     [TestClass]
     public class NewCustomerPageTest
     {
-        public IWebDriver driver = ObjectRepository.Driver;
+        private IWebDriver driver = ObjectRepository.Driver;
 
         [TestMethod]
         public void TestNewCustomerPage()

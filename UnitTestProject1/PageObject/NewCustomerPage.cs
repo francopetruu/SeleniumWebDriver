@@ -2,7 +2,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using UnitTestProject1.ComponentHelper;
 
@@ -11,6 +13,7 @@ namespace UnitTestProject1.PageObject
     public class NewCustomerPage : BasePage
     {
         private IWebDriver driver;
+        private Regex regex = new Regex("^[0-9]+$");
         public NewCustomerPage(IWebDriver _driver) : base(_driver)
         {
             this.driver = _driver;
@@ -51,7 +54,54 @@ namespace UnitTestProject1.PageObject
         {
             GetTextAreaElementByLabel(label).SendKeys(address);
         }
-
+        public void SetCity(string city, string label)
+        {
+            GetInputElementByLabel(label).SendKeys(city);
+        }
+        public void SetState(string state, string label)
+        {
+            GetInputElementByLabel(label).SendKeys(state);
+        }
+        public void SetPin(string pinNumber, string label)
+        {
+            if (pinNumber.Length.Equals(6) && regex.IsMatch(pinNumber))
+            {
+                GetInputElementByLabel(label).SendKeys(pinNumber);
+            }
+            else
+            {
+                Console.WriteLine("PIN Code must have 6 digits, only numbers allowed");
+                throw new ArgumentException();
+            }
+        }
+        public void SetMobileNumber(string number, string label)
+        {
+            if (regex.IsMatch(number))
+            {
+                GetInputElementByLabel(label).SendKeys(number);
+            }
+            else
+            {
+                Console.WriteLine("Only numbers allowed");
+                throw new ArgumentException();
+            }
+        }
+        public void SetMailAddress(string mail, string label)
+        {
+            try
+            {
+                MailAddress email = new MailAddress(mail);
+                GetInputElementByLabel(label).SendKeys(mail);
+            }
+            catch (FormatException ex)
+            {
+                Console.WriteLine(ex.Message);
+            } 
+        }
+        public void SetNewPassword(string newPass, string label)
+        {
+            GetInputElementByLabel(label).SendKeys(newPass);
+        }
         #endregion
 
         #region Navigation
