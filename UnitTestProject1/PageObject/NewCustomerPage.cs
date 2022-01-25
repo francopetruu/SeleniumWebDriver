@@ -71,7 +71,7 @@ namespace UnitTestProject1.PageObject
             else
             {
                 Console.WriteLine("PIN Code must have 6 digits, only numbers allowed");
-                throw new ArgumentException();
+                throw new FormatException();
             }
         }
         public void SetMobileNumber(string number, string label)
@@ -83,7 +83,7 @@ namespace UnitTestProject1.PageObject
             else
             {
                 Console.WriteLine("Only numbers allowed");
-                throw new ArgumentException();
+                throw new FormatException();
             }
         }
         public void SetMailAddress(string mail, string label)

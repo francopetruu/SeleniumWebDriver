@@ -30,6 +30,14 @@ namespace UnitTestProject1.TestScript.PageObject
             newCustomer.SetCustomerName("Franco", "Customer Name");
             newCustomer.SetGender("m");
             newCustomer.SetDateOfBirth("24021993", "Date of Birth");
+            newCustomer.SetAddress("La Rioja 2459 4°C", "Address");
+            newCustomer.SetCity("Mar del Plata", "City");
+            newCustomer.SetState("Buenos Aires", "State");
+            newCustomer.SetPin("123456", "PIN");
+            newCustomer.SetMobileNumber("555555", "Mobile Number");
+            newCustomer.SetMailAddress("sjsjs@djdj.com", "E-mail");
+            newCustomer.SetNewPassword("123abc", "Password");
+            newCustomer.ClickOnButtonByLabel("Submit");
         }
     }
 }
