@@ -34,8 +34,8 @@ namespace UnitTestProject1.TestScript.PageObject
             newCustomer.SetCity("Mar del Plata", "City");
             newCustomer.SetState("Buenos Aires", "State");
             newCustomer.SetPin("123456", "PIN");
-            newCustomer.SetMobileNumber("555555", "Mobile Number");
-            newCustomer.SetMailAddress("sjsjs@djdj.com", "E-mail");
+            newCustomer.SetMobileNumber("55a5555", "Mobile Number");
+            newCustomer.SetMailAddress("sjsjsdj@dj.com", "E-mail");
             newCustomer.SetNewPassword("123abc", "Password");
             newCustomer.ClickOnButtonByLabel("Submit");
         }

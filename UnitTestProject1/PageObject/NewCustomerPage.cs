@@ -64,27 +64,43 @@ namespace UnitTestProject1.PageObject
         }
         public void SetPin(string pinNumber, string label)
         {
-            if (pinNumber.Length.Equals(6) && regex.IsMatch(pinNumber))
+            try
             {
-                GetInputElementByLabel(label).SendKeys(pinNumber);
+                if (pinNumber.Length.Equals(6) && regex.IsMatch(pinNumber))
+                {
+                    GetInputElementByLabel(label).SendKeys(pinNumber);
+                }
+                else
+                {
+                    Console.WriteLine("PIN Code must have 6 digits, only numbers allowed");
+                    throw new FormatException();
+                }
             }
-            else
+            catch (FormatException ex)
             {
-                Console.WriteLine("PIN Code must have 6 digits, only numbers allowed");
-                throw new FormatException();
+                Console.WriteLine(ex.StackTrace);
+                Console.WriteLine(ex.Message);
             }
         }
         public void SetMobileNumber(string number, string label)
         {
-            if (regex.IsMatch(number))
+            try
             {
-                GetInputElementByLabel(label).SendKeys(number);
+                if (regex.IsMatch(number))
+                {
+                    GetInputElementByLabel(label).SendKeys(number);
+                }
+                else
+                {
+                    Console.WriteLine("Only numbers allowed");
+                    throw new FormatException();
+                }
             }
-            else
+            catch (FormatException ex)
             {
-                Console.WriteLine("Only numbers allowed");
-                throw new FormatException();
-            }
+                Console.Write(ex.StackTrace);
+                Console.WriteLine(ex.Message);
+            }   
         }
         public void SetMailAddress(string mail, string label)
         {
@@ -95,6 +111,7 @@ namespace UnitTestProject1.PageObject
             }
             catch (FormatException ex)
             {
+                Console.WriteLine(ex.StackTrace);
                 Console.WriteLine(ex.Message);
             } 
         }
