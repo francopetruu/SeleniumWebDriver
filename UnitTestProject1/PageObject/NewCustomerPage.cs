@@ -47,6 +47,11 @@ namespace UnitTestProject1.PageObject
         {
             GetInputElementByLabel(label).SendKeys(ddMMyyyy);
         }
+        public void SetAddress(string address, string label)
+        {
+            GetTextAreaElementByLabel(label).SendKeys(address);
+        }
+
         #endregion
 
         #region Navigation

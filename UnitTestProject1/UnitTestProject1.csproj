@@ -102,6 +102,7 @@
     <Compile Include="TestScript\MouseActions\TestMouseActions.cs" />
     <Compile Include="TestScript\MultipleBrowser\TestMultipleBrowserWindows.cs" />
     <Compile Include="TestScript\PageNavigation\TestPageNavigation.cs" />
+    <Compile Include="TestScript\PageObject\NewCustomerPageTest.cs" />
     <Compile Include="TestScript\PageObject\PageObjectTest.cs" />
     <Compile Include="TestScript\PopUps\TestPopups.cs" />
     <Compile Include="TestScript\RadioButton\TestRadioButton.cs" />
