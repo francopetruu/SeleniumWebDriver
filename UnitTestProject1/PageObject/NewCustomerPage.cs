@@ -22,7 +22,6 @@ namespace UnitTestProject1.PageObject
         #region WebElements
         private By FemaleRadioButton = By.XPath("//input[@value = 'f']");
         private By MaleRadioButton = By.XPath("//input[@value = 'm']");
-        private By DateOfBirthInput = By.XPath("//input[@type= 'date']");
         #endregion
 
         #region Actions
