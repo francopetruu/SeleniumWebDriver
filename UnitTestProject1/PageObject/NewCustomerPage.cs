@@ -39,7 +39,7 @@ namespace UnitTestProject1.PageObject
             }
             else
             {
-                Console.WriteLine("Invalid gender: please write male or female");
+                Console.WriteLine("Invalid gender: please write m or f");
                 throw new NoSuchElementException();
             }
         }
