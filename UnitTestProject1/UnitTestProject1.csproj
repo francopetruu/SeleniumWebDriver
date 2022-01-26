@@ -107,6 +107,7 @@
     <Compile Include="TestScript\PopUps\TestPopups.cs" />
     <Compile Include="TestScript\RadioButton\TestRadioButton.cs" />
     <Compile Include="TestScript\Screenshot\TakeScreenShot.cs" />
+    <Compile Include="TestScript\TestContext\TestContextClass.cs" />
     <Compile Include="TestScript\TextBox\TestTextBox.cs" />
     <Compile Include="TestScript\WebDriverWaitsTest\ExplicitWaitTest.cs" />
     <Compile Include="TestScript\WebDriverWaitsTest\ImplicitWaitTest.cs" />
