@@ -15,8 +15,15 @@ namespace UnitTestProject1.TestScript.PageObject
     public class NewCustomerPageTest
     {
         private IWebDriver driver = ObjectRepository.Driver;
+        private TestContext testContext;
+        public TestContext TestContext
+        {
+            get { return testContext; }
+            set { testContext = value; }
+        }
 
         [TestMethod]
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", @"C:\Users\Franco Petruccelli\source\repos\SeleniumWebDriver\UnitTestProject1\TestData.csv", "TestData#csv", DataAccessMethod.Sequential)]
         public void TestNewCustomerPage()
         {
             NavigationHelper.NavigateToUrl(ObjectRepository.Config.GetWebsite());
@@ -34,7 +41,7 @@ namespace UnitTestProject1.TestScript.PageObject
             newCustomer.SetCity("Mar del Plata", "City");
             newCustomer.SetState("Buenos Aires", "State");
             newCustomer.SetPin("123456", "PIN");
-            newCustomer.SetMobileNumber("55a5555", "Mobile Number");
+            newCustomer.SetMobileNumber("555555", "Mobile Number");
             newCustomer.SetMailAddress("sjsjsdj@dj.com", "E-mail");
             newCustomer.SetNewPassword("123abc", "Password");
             newCustomer.ClickOnButtonByLabel("Submit");
