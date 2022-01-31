@@ -90,6 +90,7 @@
     <Compile Include="Configuration\BrowserType.cs" />
     <Compile Include="Configuration\XmlReader.cs" />
     <Compile Include="CustomException\NoSuitableDriverFound.cs" />
+    <Compile Include="DataDriven\ExcelReader.cs" />
     <Compile Include="Interfaces\IConfig.cs" />
     <Compile Include="PageObject\BasePage.cs" />
     <Compile Include="PageObject\LoginPage.cs" />
