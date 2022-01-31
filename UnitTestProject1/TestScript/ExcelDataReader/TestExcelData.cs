@@ -19,7 +19,15 @@ namespace UnitTestProject1.TestScript.ExcelDataReader
             FileStream stream = new FileStream(@"C:\Users\Franco Petruccelli\source\repos\SeleniumWebDriver\UnitTestProject1\DataSet.xlsx", FileMode.Open, FileAccess.Read);
             IExcelDataReader reader = ExcelReaderFactory.CreateOpenXmlReader(stream);
             DataTable table = reader.AsDataSet().Tables["Sheet1"];
-            Console.WriteLine("Data: " + table.Rows[0][0]);
+            for(int i=0; i<table.Rows.Count; i++)
+            {
+                var col = table.Rows[i];
+                for(int j=0; j<col.ItemArray.Length; j++)
+                {
+                    Console.Write(" Data: " + col.ItemArray[j]);
+                }
+                Console.WriteLine();
+            }
         }
     }
 }
