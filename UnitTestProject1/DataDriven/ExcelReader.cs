@@ -20,7 +20,7 @@ namespace UnitTestProject1.DataDriven
             _cache = new Dictionary<string, IExcelDataReader>();
         }
 
-        public static string GetCellData(string xlPath, string sheetName, int row, int col)
+        public static object GetCellData(string xlPath, string sheetName, int row, int col)
         {
             if (_cache.ContainsKey(sheetName))
             {
@@ -33,7 +33,21 @@ namespace UnitTestProject1.DataDriven
                 _cache.Add(sheetName, reader);
             }
             DataTable table = reader.AsDataSet().Tables[sheetName];
-            return table.Rows[row][col].ToString();
-        } 
+            return GetData(table.Rows[row][col].GetType(), table.Rows[row][col]);
+        }
+        private static object GetData(Type type, object data)
+        {
+            switch (type.Name)
+            {
+                case "String":
+                    return data.ToString();
+                case "Double":
+                    return Convert.ToDouble(data);
+                case "DateTime":
+                    return Convert.ToDateTime(data);
+                default:
+                    return data. ToString();
+            }
+        }
     }
 }
